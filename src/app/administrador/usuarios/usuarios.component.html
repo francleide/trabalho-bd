@@ -1,0 +1,62 @@
+<div class="row mt-3 mb-3">
+  <div class="col">
+    <h2>USUÁRIOS DO SISTEMA</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col mb-4">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home"><i class="icon-hourglass"></i> PENDENTES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"><i class="icon-check"></i> ATIVOS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages"><i class="icon-ban"></i> BLOQUEADOS</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="home" role="tabpanel">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let u of usuariosPendentes">
+            <div>
+              <h5>{{ u.nome }}</h5>
+              <p>{{ u.unidade }}<br>{{ u.email }}</p>
+            </div>
+            <div class="btn-group-vertical" role="group" aria-label="Aprovar/Reprovar">
+              <button type="button" class="btn btn-success"><i class="icon-like"></i></button>
+              <button type="button" class="btn btn-danger"><i class="icon-dislike"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="profile" role="tabpanel">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let u of usuariosAtivos">
+            <div>
+              <h5>{{ u.nome }}</h5>
+              <p>{{ u.unidade }}<br>{{ u.email }}</p>
+            </div>
+            <div class="btn-group-vertical" role="group" aria-label="Bloquear usuário">
+              <button type="button" class="btn btn-danger" title="Bloquear"><i class="icon-lock"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="messages" role="tabpanel">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let u of usuariosAtivos">
+            <div>
+              <h5>{{ u.nome }}</h5>
+              <p>{{ u.unidade }}<br>{{ u.email }}</p>
+            </div>
+            <div class="btn-group-vertical" role="group" aria-label="Desbloquear usuário">
+              <button type="button" class="btn btn-success" title="Desbloquear"><i class="icon-lock-open"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
