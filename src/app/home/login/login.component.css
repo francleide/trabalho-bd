@@ -1,0 +1,17 @@
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 30vw
+}
+
+@media (max-width:400px) {
+    .card {
+        width: 90vw;
+        height: 60vh;
+    }
+}
